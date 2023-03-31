@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="mycanvas"></canvas>
+
+    <script>
+      // ambil elemnt canvasnya
+      const c = document.getElementById("mycanvas");
+      //wdh hgt untuk mengatur dimendinya
+      c.width = window.innerWidth; // bisa juga di tulis mengunakan px
+      c.height = window.innerHeight; // c.height = 300px
+
+      //unutk context canvasnya 2d
+      const ctx = c.getContext("2d");
+
+      //style Canvas
+
+      ctx.fillStyle = "red"; // warna element
+      ctx.strokeStyle = "#333"; //warna birder
+      ctx.lineWidth = 4; // Tebal border
+
+      //untuk membuat kotak
+      ctx.rect(200, 700, 160, 150); //(x,y,width,height)
+
+      //membuat bulat
+      ctx.arc(300, 1000, 90, 0, 2 * Math.PI); //(x,y,radius,sudutAwal,sudutAkhir)
+      // membuat Path
+
+      ctx.fill(); //memanggil warna
+      ctx.stroke(); //memangil border
+      ctx.beginPath();
+
+      ctx.moveTo(300, 50);
+      ctx.lineTo(450, 350);
+      ctx.lineTo(150, 350);
+      ctx.lineTo(300, 50);
+
+      ctx.beginPath();
+      ctx.moveTo(50, 50);
+      ctx.lineTo(300, 60);
+      ctx.lineTo(300, 400);
+      ctx.lineTo(400, 400);
+      ctx.closePath();
+
+      //memanggil
+      ctx.fill(); //memanggil warna
+      ctx.stroke(); //memangil border
+    </script>
+  </body>
+</html>
