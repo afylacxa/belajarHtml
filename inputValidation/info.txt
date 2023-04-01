@@ -1,0 +1,28 @@
+Html 5 Input Attributes
+
+autocomplate(form/input)// untuk menghilangkan romendasi(saved data) di saat input
+autofocus // untuk kursor otomatis ada di situ // Hanya 1 di form
+required // untuk membuat input wajib di isi
+minLenght & MaxLenght // untuk menentukan panjang karakter yang bisa di isi
+min & max // untuk mencari nilai di antara // misal 100 sampai 120 diluar itu tidak valid
+step // untuk kelipatan // di number
+pattern // untuk menentukan pola dari inputan yang bisa kita isi dengan regEX (reguler expression)
+
+
+CSS
+:valid// contoh input:valid{apa yang ingin dilakukan jika input valid}
+:invalid // contoh input:invalid{apa yang ingin dilakukan jika input invalid}
+:required // contoh input:requaried{} // input:invalid{},input:requaried:invalid{apa yang dilakukan jika input requariednya invalid}
+
+
+
+js
+
+(menulisnya tetap di input)
+oninvalid="this.setCustomValidity('{apa yang ingin di isi jika input tidak valid(peringatannya)// contohnya: INI HARUS DI ISI!	}')"
+oninput="this.setCustomValidity('')"
+
+novalidate(form)untuk tidak ada peringatan validasinya
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Untuk info penggunaan dan attributes lainnya tinggal di cari di google

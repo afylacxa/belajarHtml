@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form validation</title>
+  </head>
+  <style>
+    label {
+      display: block;
+    }
+    form div {
+      margin: 10px;
+    }
+
+    input:valid {
+      border: black solid;
+    }
+    input:required:invalid {
+      border: red solid;
+      /* untuk input yang ada requirednya saja */
+    }
+  </style>
+  <body>
+    <form action="" method="post" autocomplete="off">
+      <div>
+        <label for="nama">Masukan nama :</label>
+        <input type="text" name="nama" id="nama" / autofocus>
+      </div>
+      <div>
+        <!-- Email -->
+        <!-- yang valid pakai # -->
+        <label for="email">Masukan email :</label>
+        <input type="email" name="email" id="email" required />
+      </div>
+      <div>
+        <!-- url -->
+        <!-- yang valid pakai https://afylacxa/belajarHtml.git  -->
+        <label for="webside">Masukan webside :</label>
+        <input type="url" name="webside" id="webside" />
+      </div>
+      <div>
+        <!-- Number -->
+        <!-- untuk angka saja -->
+        <label for="angka">Masukan angka :</label>
+        <input type="number" name="angka" id="angka" />
+      </div>
+
+      <div>
+        <!-- date -->
+        <!-- untuk memilih di kalender -->
+        <label for="tanggal">Masukan tanggal :</label>
+        <input type="date" name="tanggal" id="tanggal" />
+      </div>
+
+      <div>
+        <!-- color -->
+        <!-- untuk memilih warna -->
+        <label for="warna">Masukan warna :</label>
+        <input type="color" name="warna" id="warna" />
+      </div>
+
+      <div>
+        <!-- range -->
+        <!-- untuk menentukan angka dengan slide -->
+        <label for="slider">Masukan slider :</label>
+        <span class="awal"></span>
+        <input type="range" name="slider" id="slider" min="0" max="100" />
+        <span class="akhir"></span>
+      </div>
+
+      <div>
+        <input type="submit" name="submit" id="submit" />
+      </div>
+    </form>
+    <script>
+      const slider = document.querySelector("#slider");
+      const awal = document.querySelector(".awal");
+      const akhir = document.querySelector(".akhir");
+
+      awal.innerHTML = slider.min;
+      akhir.innerHTML = slider.value;
+
+      slider.addEventListener("input", function () {
+        akhir.innerHTML = slider.value;
+      });
+    </script>
+  </body>
+</html>
